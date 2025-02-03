@@ -1,34 +1,25 @@
-import Right from "@/components/icons/Right";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Hero() {
   return (
-    <section className="hero md:mt-4">
-      <div className="py-8 md:py-12">
-        <h1 className="text-4xl font-semibold">
-          Everything<br />
-          is better<br />
+    <section className="w-100% sm:w-[70%] mx-auto flex justify-between sm:h-[70vh] h-[100vh] items-center p-6">
+      <div className="font-semibold w-[50%] h-full flex flex-col justify-evenly">
+        <h1 className="sm:text-6xl text-lg font-semibold text-black">Everything
+          is better
           with a&nbsp;
-          <span className="text-primary">
+          <span className="text-main ">
             Pizza
           </span>
         </h1>
-        <p className="my-6 text-gray-500 text-sm">
-          Pizza is the missing piece that makes every day complete, a simple yet delicious joy in life
-        </p>
-        <div className="flex gap-4 text-sm">
-          <button className="flex justify-center bg-primary uppercase flex items-center gap-2 text-white px-4 py-2 rounded-full">
-            Order now
-            <Right />
-          </button>
-          <button className="flex items-center border-0 gap-2 py-2 text-gray-600 font-semibold">
-            Learn more
-            <Right />
-          </button>
+        <p className="my-6 text-gray-500 sm:text-lg text-sm">Pizza is the missing piece that makes every day complete, a simple yet delicious joy in life</p>
+        <div>
+          <Link href='/' className="bg-main rounded-full text-white px-6 py-4 text-lg mr-3">Order Now</Link>
+          <Link href='/' className="border p-4">Learn More</Link>
         </div>
       </div>
-      <div className="relative hidden md:block">
-        <Image src={'/pizza.png'} layout={'fill'} objectFit={'contain'} alt={'pizza'} />
+      <div className="w-[50%] h-full relative">
+        <Image className=" object-contain" src='/pizza.png' alt={'pizza'} width={500} height={500} />
       </div>
     </section>
   );
