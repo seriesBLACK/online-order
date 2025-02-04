@@ -1,6 +1,6 @@
 import Link from "next/link";
-import ShoppingCart from "../../../../public/icons/ShoppingCart";
 import DropDownMenu from "../menu/dropDownMenu";
+import Image from "next/image";
 
 export default function Header() {
   return (
@@ -19,7 +19,7 @@ export default function Header() {
         <Link href='/'>Login</Link>
         <Link href='/' className="bg-main rounded-full text-white px-8 py-2 hidden sm:block">Register</Link>
         <Link href='/' className="w-7 h-7">
-          <ShoppingCart />
+          <Image src="/icons/ShoppingCart.svg" width={16} height={16} alt="cart" />
         </Link>
         <DropDownMenu />
       </div>
