@@ -1,5 +1,4 @@
 "use client"
-import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react"
 
@@ -8,7 +7,10 @@ export default function DropDownMenu() {
   return (
     <>
       <button onClick={() => setDropDown(prev => !prev)} className="w-6 h-6 sm:hidden">
-        <Image src="/icons/bars.svg" alt="menu" width={24} height={24} />
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 9h16.5m-16.5 6.75h16.5" />
+        </svg>
+
       </button>
       {dropDown && (
         <div className="sm:hidden md:hidden bg-gray-200 rounded-lg flex flex-col gap-2 text-center fixed w-full top-10 left-0">

@@ -30,8 +30,8 @@ export default function Register() {
 
   }
   return (
-    <section className="mt-8 bg-slate-100 border w-[100%] sm:w-[50%] mx-auto p-4 rounded-lg flex flex-col justify-between items-center">
-      <h1 className="text-main text-4xl mb-8 font-bold">
+    <section className="bg-slate-100 border w-[100%] h-[100vh] mx-auto p-4 rounded-lg flex flex-col justify-center items-center">
+      <h1 className="text-main text-4xl mb-12 font-bold">
         Register
       </h1>
       {userCreated && (
@@ -48,13 +48,13 @@ export default function Register() {
         </div>
       )}
       <form className="flex flex-col items-center gap-2" onSubmit={handleFormSubmit}>
-        <input type="email" placeholder="email" value={email}
+        <input className="py-2 px-8 border rounded-md" type="email" placeholder="email" value={email}
           disabled={creatingUser}
           onChange={ev => setEmail(ev.target.value)} />
-        <input type="password" placeholder="password" value={password}
+        <input className="py-2 px-8 border rounded-md" type="password" placeholder="password" value={password}
           disabled={creatingUser}
           onChange={ev => setPassword(ev.target.value)} />
-        <button type="submit" disabled={creatingUser}>
+        <button type="submit" className="bg-main text-white py-2 px-4 rounded-lg font-semibold mt-3" disabled={creatingUser}>
           Register
         </button>
         <div className="my-4 text-center text-gray-500">
@@ -62,11 +62,11 @@ export default function Register() {
         </div>
         <button
           onClick={() => signIn('google', { callbackUrl: '/' })}
-          className="flex gap-4 justify-center">
+          className="flex gap-4 justify-center bg-white py-2 px-6 rounded-e-xl font-semibold">
           <Image src='/google.png' alt={''} width={24} height={24} />
           Login with google
         </button>
-        <div className="text-center my-4 text-gray-500 border-t pt-4">
+        <div className="text-center my-4 text-gray-500 border-t pt-4 text-lg">
           Existing account?{' '}
           <Link className="underline" href={'/login'}>Login here &raquo;</Link>
         </div>
